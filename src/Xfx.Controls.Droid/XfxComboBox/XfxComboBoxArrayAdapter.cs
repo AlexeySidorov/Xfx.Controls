@@ -20,12 +20,6 @@ namespace Xfx.Controls.Droid.XfxComboBox
             _sortingAlgorithm = sortingAlgorithm;
         }
         
-        public override Filter Filter
-        {
-            get
-            {
-                return new XfxComboBoxFilter(_sortingAlgorithm) { Adapter = this, Originals = _objects };
-            }
-        }
+        public override Filter Filter => new XfxComboBoxFilter(_sortingAlgorithm) { Adapter = this, Originals = _objects };
     }
 }

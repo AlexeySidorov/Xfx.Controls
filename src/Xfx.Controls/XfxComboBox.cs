@@ -7,12 +7,12 @@ namespace Xfx
 {
     public class XfxComboBox : XfxEntry
     {
-        private static readonly Func<string, ICollection<string>, ICollection<string>> _defaultSortingAlgorithm = (t, d) => d;
+        private static readonly Func<string, ICollection<string>, ICollection<string>> DefaultSortingAlgorithm = (t, d) => d;
 
         public static readonly BindableProperty SortingAlgorithmProperty = BindableProperty.Create(nameof(SortingAlgorithm),
             typeof(Func<string, ICollection<string>, ICollection<string>>),
             typeof(XfxComboBox),
-            _defaultSortingAlgorithm);
+            DefaultSortingAlgorithm);
 
         public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create(nameof(ItemsSource),
             typeof(IEnumerable<string>),
@@ -43,8 +43,8 @@ namespace Xfx
         /// </example>
         public Func<string, ICollection<string>, ICollection<string>> SortingAlgorithm
         {
-            get { return (Func<string, ICollection<string>, ICollection<string>>)GetValue(SortingAlgorithmProperty); }
-            set { SetValue(SortingAlgorithmProperty, value); }
+            get => (Func<string, ICollection<string>, ICollection<string>>)GetValue(SortingAlgorithmProperty);
+            set => SetValue(SortingAlgorithmProperty, value);
         }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace Xfx
         /// </summary>
         public int Threshold
         {
-            get { return (int)GetValue(ThresholdProperty); }
-            set { SetValue(ThresholdProperty, value); }
+            get => (int)GetValue(ThresholdProperty);
+            set => SetValue(ThresholdProperty, value);
         }
 
         /// <summary>
@@ -70,8 +70,8 @@ namespace Xfx
         /// </summary>
         public IEnumerable<string> ItemsSource
         {
-            get { return (IEnumerable<string>)GetValue(ItemsSourceProperty); }
-            set { SetValue(ItemsSourceProperty, value); }
+            get => (IEnumerable<string>)GetValue(ItemsSourceProperty);
+            set => SetValue(ItemsSourceProperty, value);
         }
 
         public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;

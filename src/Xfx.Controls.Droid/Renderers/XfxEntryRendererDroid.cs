@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Android.Content;
 using Android.Content.Res;
 using Android.Support.Design.Widget;
@@ -92,7 +93,7 @@ namespace Xfx.Controls.Droid.Renderers
 
                 if (!string.IsNullOrWhiteSpace(Element.AutomationId))
                     EditText.ContentDescription = Element.AutomationId;
-                
+
                 _defaultTextColor = EditText.TextColors;
 
                 Focusable = true;
@@ -165,12 +166,12 @@ namespace Xfx.Controls.Droid.Renderers
 
             var isFocusedPropertyKey = Element.GetInternalField<BindablePropertyKey>("IsFocusedPropertyKey");
             ((IElementController)Element).SetValueFromRenderer(isFocusedPropertyKey, _hasFocus);
-            SetUnderlineColor(_hasFocus ?  GetActivePlaceholderColor(): GetPlaceholderColor());
+            SetUnderlineColor(_hasFocus ? GetActivePlaceholderColor() : GetPlaceholderColor());
         }
 
         protected AColor GetPlaceholderColor() => Element.PlaceholderColor.ToAndroid(Color.FromHex("#80000000"));
 
-        private AColor GetActivePlaceholderColor() => Element.ActivePlaceholderColor.ToAndroid(global::Android.Resource.Attribute.ColorAccent, Context);
+        private AColor GetActivePlaceholderColor() => Element.ActivePlaceholderColor.ToAndroid(Android.Resource.Attribute.ColorAccent, Context);
 
         protected virtual void SetLabelAndUnderlineColor()
         {
@@ -190,16 +191,16 @@ namespace Xfx.Controls.Droid.Renderers
 
         private void SetHintLabelActiveColor(AColor color)
         {
-            var hintText = Control.Class.GetDeclaredField("mFocusedTextColor");
+            var hintText = Control.Class.GetDeclaredField("focusedTextColor");
             hintText.Accessible = true;
-            hintText.Set(Control, new ColorStateList(new int[][] { new[] { 0 } }, new int[] { color }));
+            hintText.Set(Control, new ColorStateList(new[] { new[] { 0 } }, new int[] { color }));
         }
 
         private void SetHintLabelDefaultColor(AColor color)
         {
-            var hint = Control.Class.GetDeclaredField("mDefaultTextColor");
+            var hint = Control.Class.GetDeclaredField("defaultHintTextColor");
             hint.Accessible = true;
-            hint.Set(Control, new ColorStateList(new int[][] { new[] { 0 } }, new int[] { color }));
+            hint.Set(Control, new ColorStateList(new[] { new[] { 0 } }, new int[] { color }));
         }
 
         private void SetText()

@@ -25,8 +25,8 @@ namespace Xfx
         /// </summary>
         public Color ActivePlaceholderColor
         {
-            get { return (Color) GetValue(ActivePlaceholderColorProperty); }
-            set { SetValue(ActivePlaceholderColorProperty, value); }
+            get => (Color) GetValue(ActivePlaceholderColorProperty);
+            set => SetValue(ActivePlaceholderColorProperty, value);
         }
 
         /// <summary>
@@ -34,8 +34,8 @@ namespace Xfx
         /// </summary>
         public bool FloatingHintEnabled
         {
-            get { return (bool) GetValue(FloatingHintEnabledProperty); }
-            set { SetValue(FloatingHintEnabledProperty, value); }
+            get => (bool) GetValue(FloatingHintEnabledProperty);
+            set => SetValue(FloatingHintEnabledProperty, value);
         }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace Xfx
         /// </summary>
         public string ErrorText
         {
-            get { return (string)GetValue(ErrorTextProperty); }
-            set { SetValue(ErrorTextProperty, value); }
+            get => (string)GetValue(ErrorTextProperty);
+            set => SetValue(ErrorTextProperty, value);
         }
 
         /// <summary>

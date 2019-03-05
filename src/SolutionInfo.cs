@@ -6,8 +6,8 @@
 using System.Reflection;
 
 [assembly: AssemblyProduct("Xfx.Controls")]
-[assembly: AssemblyVersion("0.1.1")]
-[assembly: AssemblyFileVersion("0.1.1")]
-[assembly: AssemblyInformationalVersion("0.1.1")]
-[assembly: AssemblyCopyright("Copyright (c) 2015 - 2017 Chase Florell")]
+[assembly: AssemblyVersion("1.1.4")]
+[assembly: AssemblyFileVersion("1.1.4")]
+[assembly: AssemblyInformationalVersion("1.1.4")]
+[assembly: AssemblyCopyright("Copyright (c) 2015 - 2019 Alexey Sidorov and Chase Florell")]
 

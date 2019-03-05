@@ -33,9 +33,8 @@ namespace Xfx.Controls.Droid.XfxComboBox
                 var values = new ArrayList();
                 var sorted = _sortingAlgorithm(constraint.ToString(), Originals).ToList();
 
-                for (var index = 0; index < sorted.Count; index++)
+                foreach (var item in sorted)
                 {
-                    var item = sorted[index];
                     values.Add(item);
                 }
 
@@ -54,10 +53,12 @@ namespace Xfx.Controls.Droid.XfxComboBox
             {
                 Adapter.Clear();
                 var vals = (ArrayList)results.Values;
+
                 foreach (var val in vals.ToArray())
                 {
                     Adapter.Add(val);
                 }
+
                 Adapter.NotifyDataSetChanged();
             }
         }
